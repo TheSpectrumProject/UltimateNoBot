@@ -1,0 +1,4 @@
+org\spectrum\ultimatenobot\UltimateNoBot.class
+org\spectrum\ultimatenobot\LoginInterval.class
+org\spectrum\ultimatenobot\GameJoinCheck.class
+org\spectrum\ultimatenobot\IPLoginLimiter.class
