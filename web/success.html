@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .message {
+            font-size: 24px;
+            color: green;
+            margin-bottom: 20px;
+        }
+        .note {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .progress-container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #ddd;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 30px;
+            width: 100%;
+            background-color: #00f;
+            transition: width 1s linear;
+        }
+        .time-remaining {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #555;
+        }
+        .retry-btn {
+            display: none;
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 200px; /* Set fixed width for better centering */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .retry-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">Verification Success</div>
+    <div class="note">Try rejoin the server within 2 minutes!</div>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="time-remaining" id="timeRemaining">Time remaining: 2:00</div>
+
+    <button class="retry-btn" id="retryBtn" onclick="window.location.href='./index.php'">Revalidate</button>
+
+    <script>
+        const progressBar = document.getElementById("progressBar");
+        const timeRemaining = document.getElementById("timeRemaining");
+        const retryBtn = document.getElementById("retryBtn");
+
+        let totalTime = 120; // 2 minutes in seconds
+        let currentTime = totalTime;
+
+        const interval = setInterval(() => {
+            currentTime--;
+
+            // Update progress bar
+            const percentage = (currentTime / totalTime) * 100;
+            progressBar.style.width = percentage + "%";
+
+            // Update time remaining
+            const minutes = Math.floor(currentTime / 60);
+            const seconds = currentTime % 60;
+            timeRemaining.textContent = `Time remaining: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+
+            // Stop interval when time is up
+            if (currentTime <= 0) {
+                clearInterval(interval);
+                timeRemaining.textContent = "Time is up!";
+                retryBtn.style.display = "block";  // Show the retry button
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
