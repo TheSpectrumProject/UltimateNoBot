@@ -6,6 +6,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.entity.Player;
 
+
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -16,26 +17,32 @@ import org.json.JSONObject;
 
 public class PlayerLoginCheck implements Listener {
 
-    // 存储玩家最后登录时间（单位：毫秒）
     private final Map<String, Long> playerLoginTimes = new HashMap<>();
-    private static long MIN_LOGIN_INTERVAL = 10000L; // 最小登录间隔（10秒）
-    private static int TIME_LIMIT = 3600;  // 最低游戏时长，单位为秒
     private final JavaPlugin plugin;
-    private String apiUrl;  // 存储 API 地址
 
-    // 构造函数，传递插件实例
+    // 配置项
+    private long MIN_LOGIN_INTERVAL;
+    private String apiUrl;
+    private String captchaMessage;
+    private String intervalMessage;
+    private int TIME_LIMIT;
+
+    // 构造函数，传递父类插件实例
     public PlayerLoginCheck(JavaPlugin plugin) {
         this.plugin = plugin;
-        MIN_LOGIN_INTERVAL = plugin.getConfig().getLong("login-interval", 10000L);  // 从 config.yml 获取登录间隔
-        apiUrl = plugin.getConfig().getString("api_url");
+        loadConfig();
+    }
 
-        // 确保 api_url 存在
-        if (apiUrl == null || apiUrl.isEmpty()) {
-            plugin.getLogger().warning("API 地址未在 config.yml 中配置，使用默认地址");
-            apiUrl = "http://127.0.0.1:8080/validatePlayer";  // 默认地址
+    // 加载配置
+    private void loadConfig() {
+        if (plugin instanceof UltimateNoBot) {
+            UltimateNoBot ultimateNoBot = (UltimateNoBot) plugin;
+            this.MIN_LOGIN_INTERVAL = ultimateNoBot.getMinLoginInterval();
+            this.apiUrl = ultimateNoBot.getApiUrl();
+            this.captchaMessage = ultimateNoBot.getCaptchaMessage();
+            this.intervalMessage = ultimateNoBot.getIntervalMessage();
+            this.TIME_LIMIT = ultimateNoBot.getTimeLimit();
         }
-
-        TIME_LIMIT = plugin.getConfig().getInt("bypass-time", 3600);  // 默认 3600 秒
     }
 
     // 玩家登录事件
@@ -49,7 +56,7 @@ public class PlayerLoginCheck implements Listener {
         if (playerLoginTimes.containsKey(playerIp)) {
             long lastLoginTime = playerLoginTimes.get(playerIp);
             if ((currentTime - lastLoginTime) < MIN_LOGIN_INTERVAL) {
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "You must wait at least " + MIN_LOGIN_INTERVAL / 1000 + " seconds before logging in again.");
+                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, intervalMessage);
                 return;
             }
         }
@@ -84,7 +91,7 @@ public class PlayerLoginCheck implements Listener {
 
                     if (!isValid) {
                         // 如果验证失败，阻止玩家登录
-                        event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "游戏时间不足");
+                        event.disallow(PlayerLoginEvent.Result.KICK_OTHER, captchaMessage);
                     }
                 } else {
                     plugin.getLogger().warning("请求失败，返回码: " + responseCode);
