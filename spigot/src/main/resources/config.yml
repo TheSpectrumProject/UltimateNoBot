@@ -1,5 +1,23 @@
-# config.yml
-api_url: "http://103.8.68.146:10086/check.php"
-max-players-per-ip: 2
-bypass-time: 3600
-login-interval: 10000L # 最小登录间隔（10秒）
+# ------------------------- Global Configuration -------------------------
+# Enable or disable various features
+enablePlayerLoginCheck: true         # Enable player login validation
+enableIPLoginLimiter: true           # Enable IP login limitation
+enableIdleKick: true                # Enable idle kick feature
+
+# API Configuration
+api_url: "http://103.8.68.146:10086/check.php"   # URL for the player validation API
+
+# ------------------------- Detailed Configuration -------------------------
+# IP Login Limitation
+max-players-per-ip: 2               # Maximum number of players allowed per IP address (unit: players)
+max-login-kick-message: "[UAB] Each ip can only login 2 players!"  # Message shown when an IP exceeds the login limit
+
+# Time-related Configuration
+bypass-time: 3600                   # Default bypass time in seconds (3600s = 1 hour) for captcha bypass
+login-interval: 10                  # Minimum time interval between two logins, in seconds (default 10 seconds)
+idle-kick-interval: 120             # Interval for idle checks, in seconds (default 120 seconds)
+
+# Message Configuration
+captcha-message: "[UAB] Please visit website https://uab.spectrumc.us.kg/ and finish the CAPTCHA."  # CAPTCHA prompt message
+interval-message: "[UAB] You must wait at least 10 seconds before logging in again."  # Message shown when login interval is too short
+idle-kick-message: "[UAB] Idle too long."  # Message shown when a player is kicked for idle timeout
