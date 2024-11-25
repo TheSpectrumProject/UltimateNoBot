@@ -1,7 +1,7 @@
 <?php
 // 如果用户已通过hCaptcha验证，处理验证结果
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $secretKey = '';  // 替换为你的hCaptcha secret key
+    $secretKey = 'YOUR_SECRET_KEY_HERE';  // 替换为你的hCaptcha secret key
     $response = $_POST['h-captcha-response'];  // 获取hCaptcha的验证结果
 
     // 验证hCaptcha
@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <form id="captcha-form" action="index.php" method="POST">
         <div class="h-captcha" 
-             data-sitekey="4204aed2-af5c-4e0c-a5ac-08e23ec69564" data-callback="onSubmit"></div>
+             data-sitekey="YOUR_SITEKEY_HERE" data-callback="onSubmit"></div>
     </form>
     <div class="content">
         <p>If you can't see the CAPTCHA after a while, enable JavaScript.</p>
