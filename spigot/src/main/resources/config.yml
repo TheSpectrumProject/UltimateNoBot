@@ -1,8 +1,8 @@
 # ------------------------- Global Configuration -------------------------
 # Enable or disable various features
-enablePlayerLoginCheck: true         # Enable player login validation
+enablePlayerLoginCheck: true         # Enable player login check
 enableIPLoginLimiter: true           # Enable IP login limitation
-enableIdleKick: true                # Enable idle kick feature
+enableIdleKick: true                # Enable idle kick
 
 # API Configuration
 api_url: "https://uab.spectra.us.kg/check.php"   # URL for the player validation API
@@ -15,7 +15,7 @@ max-login-kick-message: "[UAB] Each ip can only login 2 players!"  # Message sho
 # Time-related Configuration
 bypass-time: 3600                   # Default bypass time in seconds (3600s = 1 hour) for captcha bypass
 login-interval: 10                  # Minimum time interval between two logins, in seconds (default 10 seconds)
-idle-kick-interval: 120             # Interval for idle checks, in seconds (default 120 seconds)
+idle-kick-interval: 240             # Interval for idle checks, in seconds (default 240 seconds)
 
 # Message Configuration
 captcha-message: "[UAB] Please visit website https://uab.spectra.us.kg/ and finish the CAPTCHA."  # CAPTCHA prompt message
