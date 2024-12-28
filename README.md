@@ -1,8 +1,8 @@
-# UltimateNoBot - Premium Anti-Bot Plugin for Spigot
+# UltimateNoBot - Advanced Anti-Bot Plugin for Spigot
 
 ## Overview
 
-**UltimateNoBot** is a powerful and premium security plugin designed for Spigot servers, focused on identifying and preventing bot activities, fake player attacks, and other automated threats. By utilizing the latest security technologies and advanced behavior analysis, UltimateNoBot ensures a secure, stable, and fair gaming experience for your community.
+**UltimateNoBot** is a powerful security plugin designed for Spigot servers, focused on identifying and preventing fake player attacks and other automated threats. UltimateNoBot ensures a secure, stable, and fair gaming experience for your community.
 
 ---
 
