@@ -1,33 +1,71 @@
-# UltimateNoBot
-Another Anti Bot Plugin
+# UltimateNoBot - Premium Anti-Bot Plugin for Spigot
 
-----------
-UltimateNoBot - Ultimate Anti-Bot Plugin
-Introduction:
-UltimateNoBot is a premium security plugin designed for Spigot servers, focusing on identifying and preventing bots, fake player attacks, and other automated threats. By integrating the latest security technologies and behavior analysis, UltimateNoBot ensures a safe, stable, and fair gaming environment for your server.
-Core Features:
-1.  Online hCaptcha Verification:
-•  New players must pass an online hCaptcha verification before joining the server, effectively blocking automated scripts and bots.
-•  Enhances server security by ensuring that only human players can join, improving community quality.
-2.  IP Login Limit:
-•  Limits the maximum number of logins per IP address, preventing malicious users from attacking through multiple accounts.
-•  Reduces server load and improves server stability.
-3.  Minimum Login Interval:
-•  Sets a minimum login interval for players, reducing server load and enhancing the gaming experience.
-•  Effectively prevents repeated login attempts within a short period, protecting the server from abuse.
-4.  Anti-AFK Mechanism:
-•  Detects and automatically kicks bots that are inactive for an extended period, maintaining server activity.
-•  Promotes a healthy gaming environment, encouraging active player participation.
-5.  Redis Database Support:
-•  The plugin’s verification page utilizes a Redis database, ensuring efficient verification processes and rapid data retrieval.
-•  The use of Redis database enhances the speed and reliability of data handling, providing robust data support for the server.
-Notes:
-1.  Version Compatibility:
-•  UltimateNoBot is only compatible with single servers running Spigot 1.16.5 and above; it does not support group servers.
-•  Please ensure your server version meets the requirements for the plugin to function correctly.
-2.  Recommendation for Verification Website Setup:
-•  The plugin’s built-in demo site may be unstable; we recommend users set up their own verification website for a more reliable service.
-•  Setting up your own verification website can provide a more customized user experience and ensure the stability and security of the verification process.
-Ease of Use:
-•  UltimateNoBot is easy to install and flexible in configuration, suitable for servers of all sizes.
-•  Provides detailed configuration files, allowing you to easily customize various security settings to meet different server needs.
+## Overview
+
+**UltimateNoBot** is a powerful and premium security plugin designed for Spigot servers, focused on identifying and preventing bot activities, fake player attacks, and other automated threats. By utilizing the latest security technologies and advanced behavior analysis, UltimateNoBot ensures a secure, stable, and fair gaming experience for your community.
+
+---
+
+## Core Features
+
+### 🚫 Online hCaptcha Verification
+- **New players** are required to pass an **online hCaptcha verification** before joining the server.
+- Effectively blocks **bots**, ensuring that only human players can join.
+- **Improves server security**  by preventing fake accounts.
+
+### 🔒 IP Login Limit
+- Limits the maximum number of logins per **IP address**, preventing malicious users from flooding the server with multiple accounts.
+
+### ⏱️ Minimum Login Interval
+- Sets a **minimum login interval** between player logins, reducing the chances of repeated login attempts in a short period.
+- Protects the server from abuse and provides a **smoother gameplay experience**.
+
+### 🤖 Anti-AFK
+- **Detects inactive players** (bots) and automatically kicks them after a set period of inactivity.
+
+### ⚡ Redis Database Support
+- Uses a **Redis database** to handle the plugin's verification process efficiently.
+- **Rapid data retrieval** and high reliability ensure a seamless experience.
+- Ideal for managing high traffic without compromising server performance.
+
+### 🛠️ Ease of Use
+- **Easy to install** and **highly configurable**, making it suitable for servers of all sizes.
+- Includes **detailed configuration files**, allowing you to customize various security settings to meet your server's unique needs.
+
+---
+
+## Notes
+
+### ⚙️ Version Compatibility
+- **UltimateNoBot** is compatible with **Spigot 1.16.5** and above. It is designed for single-server use only and **does not support group servers**.
+- Ensure your server version meets these requirements for optimal functionality.
+
+### 🌐 Recommendation for Verification Website Setup
+- The plugin comes with a **demo verification website**, but we **strongly recommend setting up your own** for better stability and performance.
+- A custom verification site provides **improved reliability** and a **tailored user experience**.
+
+---
+
+## Installation
+
+1. Download the latest version of **UltimateNoBot** from the [releases section](#) of this repository.
+2. Place the plugin `.jar` file into your server's **plugins** directory.
+3. Restart your server.
+4. Modify the `config.yml` file as needed to customize the plugin's behavior.
+
+
+---
+
+## Support & Contributions
+
+If you encounter any issues or have suggestions, please feel free to open an **issue** or submit a **pull request**.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](#). See the [LICENSE](#) file for more information.
+
+---
+
+Thank you for choosing **UltimateNoBot**! Keep your server safe and free from bots. 💪
