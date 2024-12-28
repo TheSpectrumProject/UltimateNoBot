@@ -48,11 +48,10 @@
 
 ## Installation
 
-1. Download the latest version of **UltimateNoBot** from the [releases section](#) of this repository.
+1. Download the latest version of **UltimateNoBot** from the [releases section](https://github.com/TheSpectrumProject/UltimateNoBot/releases) of this repository.
 2. Place the plugin `.jar` file into your server's **plugins** directory.
 3. Restart your server.
 4. Modify the `config.yml` file as needed to customize the plugin's behavior.
-
 
 ---
 
@@ -64,7 +63,7 @@ If you encounter any issues or have suggestions, please feel free to open an **i
 
 ## License
 
-This project is licensed under the [MIT License](#). See the [LICENSE](#) file for more information.
+This project is licensed under the [MIT License](https://github.com/TheSpectrumProject/UltimateNoBot/blob/main/LICENSE). See the [LICENSE](https://github.com/TheSpectrumProject/UltimateNoBot/blob/main/LICENSE) file for more information.
 
 ---
 
