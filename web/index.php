@@ -24,7 +24,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // hCaptcha验证成功
 
         // 获取用户IP地址
-        $userIp = $_SERVER['REMOTE_ADDR'];
+        //$userIp = $_SERVER['REMOTE_ADDR'];
+        $userIp = isset($_SERVER['HTTP_CF_CONNECTING_IP']) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'];//cloudflare support
         
         // 连接Redis数据库
         try {
