@@ -5,7 +5,7 @@ enableIPLoginLimiter: true           # Enable IP login limitation
 enableIdleKick: true                # Enable idle kick
 
 # API Configuration
-api_url: "http://uab.spectra.us.kg:10086/check.php"   # URL for the player validation API
+api_url: "https://uab.spectra.us.kg/check.php"   # URL for the player validation API
 
 # ------------------------- Detailed Configuration -------------------------
 # IP Login Limitation
@@ -18,6 +18,6 @@ login-interval: 10                  # Minimum time interval between two logins, 
 idle-kick-interval: 240             # Interval for idle checks, in seconds (default 240 seconds)
 
 # Message Configuration
-captcha-message: "[UAB] Please visit website http://uab.spectra.us.kg:10086/ and finish the CAPTCHA."  # CAPTCHA prompt message
+captcha-message: "[UAB] Please visit website https://uab.spectra.us.kg/ and finish the CAPTCHA."  # CAPTCHA prompt message
 interval-message: "[UAB] You must wait at least 10 seconds before logging in again."  # Message shown when login interval is too short
 idle-kick-message: "[UAB] Idle too long."  # Message shown when a player is kicked for idle timeout
