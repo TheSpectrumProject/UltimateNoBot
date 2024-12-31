@@ -7,7 +7,7 @@ enableIdleKick: true                # Enable idle kick
 # API Configuration
 # Please note that the public API is limited by the rate and cannot cope with large-scale attacks.
 # Please build your own authentication service or use the paid API.
-api_url: "https://unb.spectra.us.kg:10086/check.php"   # URL for the player validation API
+api_url: "https://unb.spectra.us.kg/check.php"   # URL for the player validation API
 
 # ------------------------- Detailed Configuration -------------------------
 # IP Login Limitation
