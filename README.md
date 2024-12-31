@@ -6,7 +6,7 @@
 
 ---
 
-## Core Features
+## 🔥Core Features
 
 ### 🚫 Online hCaptcha Verification
 - **New players** are required to pass an **online hCaptcha verification** before joining the server.
@@ -40,7 +40,8 @@
 - **UltimateNoBot** is compatible with **Spigot 1.16.5** and above. It is designed for single-server use only and **does not support group servers**.
 - Ensure your server version meets these requirements for optimal functionality.
 
-### 🌐 Recommendation for Verification Website Setup
+### 🌐 Setup your own Verification Website
+- **Please note that the public API is limited by the rate and cannot cope with large-scale attacks!!! Please build your own verification service or use the paid API!**
 - The plugin comes with a **demo verification website**, but we **strongly recommend setting up your own** for better stability and performance.
 - A custom verification site provides **improved reliability** and a **tailored user experience**.
 
