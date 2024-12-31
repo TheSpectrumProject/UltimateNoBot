@@ -35,7 +35,10 @@ public class UltimateNoBot extends JavaPlugin {
             new IdleKick(this).start();
         }
 
-        getLogger().info("IPLoginLimitPlugin 已启用！");
+        getLogger().info("UltimateNoBot enabled！");
+        if (apiUrl == "https://unb.spectra.us.kg:10086/check.php") {
+            getLogger().warning("Using Public API! Please note that the public API is limited by the rate and cannot cope with large-scale attacks. Please build your own authentication service or use the paid API");
+        }
     }
 
     // 加载配置

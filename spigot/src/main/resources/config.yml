@@ -5,19 +5,21 @@ enableIPLoginLimiter: true           # Enable IP login limitation
 enableIdleKick: true                # Enable idle kick
 
 # API Configuration
-api_url: "https://uab.spectra.us.kg/check.php"   # URL for the player validation API
+# Please note that the public API is limited by the rate and cannot cope with large-scale attacks.
+# Please build your own authentication service or use the paid API.
+api_url: "https://unb.spectra.us.kg:10086/check.php"   # URL for the player validation API
 
 # ------------------------- Detailed Configuration -------------------------
 # IP Login Limitation
 max-players-per-ip: 2               # Maximum number of players allowed per IP address (unit: players)
-max-login-kick-message: "[UAB] Each ip can only login 2 players!"  # Message shown when an IP exceeds the login limit
+max-login-kick-message: "[UNB] Each ip can only login 2 players!"  # Message shown when an IP exceeds the login limit
 
 # Time-related Configuration
-bypass-time: 3600                   # Default bypass time in seconds (3600s = 1 hour) for captcha bypass
-login-interval: 10                  # Minimum time interval between two logins, in seconds (default 10 seconds)
+bypass-time: 600                   # Default bypass time in seconds (600s = 10 min) for captcha bypass
+login-interval: 5                  # Minimum time interval between two logins, in seconds (default 5 seconds)
 idle-kick-interval: 240             # Interval for idle checks, in seconds (default 240 seconds)
 
 # Message Configuration
-captcha-message: "[UAB] Please visit website https://uab.spectra.us.kg/ and finish the CAPTCHA."  # CAPTCHA prompt message
-interval-message: "[UAB] You must wait at least 10 seconds before logging in again."  # Message shown when login interval is too short
-idle-kick-message: "[UAB] Idle too long."  # Message shown when a player is kicked for idle timeout
+captcha-message: "[UNB] Please visit website https://unb.spectra.us.kg/ and finish the CAPTCHA."  # CAPTCHA prompt message
+interval-message: "[UNB] You must wait at least 10 seconds before logging in again."  # Message shown when login interval is too short
+idle-kick-message: "[UNB] Idle too long."  # Message shown when a player is kicked for idle timeout
