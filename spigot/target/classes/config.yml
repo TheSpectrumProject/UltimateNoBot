@@ -1,5 +1,0 @@
-# config.yml
-api_url: "http://103.8.68.146:10086/check.php"
-max-players-per-ip: 2
-bypass-time: 3600
-login-interval: 10000L # 最小登录间隔（10秒）
