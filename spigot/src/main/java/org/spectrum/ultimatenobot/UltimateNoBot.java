@@ -35,9 +35,11 @@ public class UltimateNoBot extends JavaPlugin {
             new IdleKick(this).start();
         }
 
-        getLogger().info("UltimateNoBot enabled！");
-        if (apiUrl == "https://unb.spectra.us.kg:10086/check.php") {
-            getLogger().warning("Using Public API! Please note that the public API is limited by the rate and cannot cope with large-scale attacks. Please build your own authentication service or use the paid API");
+        getLogger().info("UltimateNoBot enabled!");
+        if (apiUrl == "https://unb.spectra.us.kg/check.php") {
+            getLogger().warning("Using Public API! Please note that the public API is limited by the rate and cannot cope with large-scale attacks. Please build your own verification service or use the paid API");
+            getLogger().warning("Using Public API! Please note that the public API is limited by the rate and cannot cope with large-scale attacks. Please build your own verification service or use the paid API");
+            getLogger().warning("Using Public API! Please note that the public API is limited by the rate and cannot cope with large-scale attacks. Please build your own verification service or use the paid API");
         }
     }
 
@@ -45,7 +47,7 @@ public class UltimateNoBot extends JavaPlugin {
     private void loadConfig() {
         // 主检测
         MIN_LOGIN_INTERVAL = getConfig().getInt("login-interval", 10) * 1000L;  // 从 config.yml 获取登录间隔并转换为毫秒
-        apiUrl = getConfig().getString("api_url", "http://127.0.0.1:8080/validatePlayer");
+        apiUrl = getConfig().getString("api_url", "https://unb.spectra.us.kg/check.php");
         captchaMessage = getConfig().getString("captcha-message", "Captcha Message");
         intervalMessage = getConfig().getString("interval-message", "Interval Message");
         TIME_LIMIT = getConfig().getInt("bypass-time", 3600);  // 默认 3600 秒
@@ -97,6 +99,6 @@ public class UltimateNoBot extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        getLogger().info("IPLoginLimitPlugin 已禁用！");
+        getLogger().info("UltimateNoBot disabled!");
     }
 }

@@ -94,12 +94,12 @@ public class PlayerLoginCheck implements Listener {
                         event.disallow(PlayerLoginEvent.Result.KICK_OTHER, captchaMessage);
                     }
                 } else {
-                    plugin.getLogger().warning("请求失败，返回码: " + responseCode);
-                    event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "无法验证您的信息，请稍后再试。");
+                    plugin.getLogger().warning("API error! Response: " + responseCode);
+                    event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "API error! Try again later.");
                 }
             } catch (Exception e) {
                 e.printStackTrace();
-                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "发生错误，无法验证您的信息。");
+                event.disallow(PlayerLoginEvent.Result.KICK_OTHER, "API error! Try again later.");
             }
         }
 
